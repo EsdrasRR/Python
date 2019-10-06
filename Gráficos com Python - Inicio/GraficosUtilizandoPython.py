@@ -138,3 +138,8 @@ def scatterplot():
 
     # Exibindo gráfico
     plt.show()
+
+    # Salvando gráfico
+    plt.savefig("grafico1.png", dpi=300)
+
+scatterplot()
