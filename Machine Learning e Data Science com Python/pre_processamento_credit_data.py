@@ -38,7 +38,7 @@ base.loc[pd.isnull(base['age'])]
 previsores = base.iloc[:,1:4].values
 classe = base.iloc[:,4].values
 
-
+# Atribuindo aos valores faltantes o valor da média dos valores da mesma coluna
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean')
 imputer = imputer.fit(previsores[:, 1:4])
