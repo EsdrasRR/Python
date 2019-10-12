@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 # Realizando leitura do DataFrame
-base = pd.read_csv('credit_data.csv')
+base = pd.read_csv('credit-data.csv')
 
 # Informaçoes e estatisticas sobre a base
 base.describe()
@@ -43,6 +43,16 @@ from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean')
 imputer = imputer.fit(previsores[:, 1:4])
 previsores[:, 1:4] = imputer.transform(previsores[:, 1:4])
+
+#
+## Pré processamento de dados
+#
+# Normalização de valores
+# 
+# Padronização de valores
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+previsores = scaler.fit_transform(previsores)
 
 
 
